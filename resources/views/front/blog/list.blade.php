@@ -16,86 +16,24 @@
 
             <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
 
-                <div class="post-item border">
-                    <div class="post-item-wrap shadow">
-                        <div class="post-image">
-                            <a href="{{route('blog.detail')}}">
-                                <img alt="" src="{{asset('front/images/slider-1.jpg')}}">
-                            </a>
-                        </div>
-                        <div class="post-item-description">
-                            <h2><a href="{{route('blog.detail')}}">Blog Başlık</a></h2>
-                            <p>Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama </p>
-                            <a href="{{route('blog.detail')}}" class="item-link">Daha Fazla<i class="icon-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="post-item border">
-                    <div class="post-item-wrap shadow">
-                        <div class="post-image">
-                            <a href="{{route('blog.detail')}}">
-                                <img alt="" src="{{asset('front/images/slider-1.jpg')}}">
-                            </a>
-                        </div>
-                        <div class="post-item-description">
-                            <h2><a href="{{route('blog.detail')}}">Blog Başlık</a></h2>
-                            <p>Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama </p>
-                            <a href="{{route('blog.detail')}}" class="item-link">Daha Fazla<i class="icon-chevron-right"></i></a>
+                @foreach($blog as $data)
+                    <div class="post-item border">
+                        <div class="post-item-wrap shadow">
+                            <div class="post-image">
+                                <a href="{{route('blog.detail',$data->seflink)}}">
+                                    {!! ImageHelper::createTag(json_decode($data->images,true)[0]['image'],['width' =>[355], 'height' => [200]],['class'=> 'lazy','alt' => $data->title,'title' => $data->title],'lazy') !!}
+                                </a>
+                            </div>
+                            <div class="post-item-description">
+                                <h2><a href="{{route('blog.detail',$data->seflink)}}">{{$data->title}}</a></h2>
+                                <p>{{$data->description}}</p>
+                                <a href="{{route('blog.detail',$data->seflink)}}" class="item-link">Daha Fazla<i class="icon-chevron-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="post-item border">
-                    <div class="post-item-wrap shadow">
-                        <div class="post-image">
-                            <a href="{{route('blog.detail')}}">
-                                <img alt="" src="{{asset('front/images/slider-1.jpg')}}">
-                            </a>
-                        </div>
-                        <div class="post-item-description">
-                            <h2><a href="{{route('blog.detail')}}">Blog Başlık</a></h2>
-                            <p>Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama </p>
-                            <a href="{{route('blog.detail')}}" class="item-link">Daha Fazla<i class="icon-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="post-item border">
-                    <div class="post-item-wrap shadow">
-                        <div class="post-image">
-                            <a href="{{route('blog.detail')}}">
-                                <img alt="" src="{{asset('front/images/slider-1.jpg')}}">
-                            </a>
-                        </div>
-                        <div class="post-item-description">
-                            <h2><a href="{{route('blog.detail')}}">Blog Başlık</a></h2>
-                            <p>Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama </p>
-                            <a href="{{route('blog.detail')}}" class="item-link">Daha Fazla<i class="icon-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="post-item border">
-                    <div class="post-item-wrap shadow">
-                        <div class="post-image">
-                            <a href="{{route('blog.detail')}}">
-                                <img alt="" src="{{asset('front/images/slider-1.jpg')}}">
-                            </a>
-                        </div>
-                        <div class="post-item-description">
-                            <h2><a href="{{route('blog.detail')}}">Blog Başlık</a></h2>
-                            <p>Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama </p>
-                            <a href="{{route('blog.detail')}}" class="item-link">Daha Fazla<i class="icon-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
-
-
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-            </ul>
-
         </div>
 
     </section>

@@ -7,72 +7,29 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleImage>
+                                <x-front.singleImage :image="'front/images/awards.jpeg'">
                                     <x-slot name="title">Ödüllerimiz</x-slot>
                                 </x-front.singleImage>
 
                                 <section id="page-content">
                                     <div class="grid-layout grid-3-columns portfolio-item light-bg no-overlay ct-photography ct-media ct-branding ct-Media ct-webdesign shadow" >
-                                        <div class="grid-item animated fadeInDown portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">
-                                            <div class="portfolio-item-wrap pb-0">
-                                                <div class="portfolio-image">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <img src="{{asset('front/images/slider-1.jpg')}}">
-                                                    </a>
-                                                </div>
-                                                <div class="portfolio-description">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <h3>‘Yılın En Başarılı Psikoloğu’ ödülü</h3>
-                                                        <p>Bu yıl 6’ncısı düzenlenen ’Altın Rehber Yılın Enleri’ ödül töreninde Psikolog M. Yunus Çekiç, ‘Yılın En Başarılı Psikoloğu’ ödülüne layık görüldü.</p>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-item animated fadeInLeft portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">
-                                            <div class="portfolio-item-wrap pb-0">
-                                                <div class="portfolio-image">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <img src="{{asset('front/images/slider-1.jpg')}}">
-                                                    </a>
-                                                </div>
-                                                <div class="portfolio-description">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <h3>‘Yılın En Başarılı Psikoloğu’ ödülü</h3>
-                                                        <p>Bu yıl 6’ncısı düzenlenen ’Altın Rehber Yılın Enleri’ ödül töreninde Psikolog M. Yunus Çekiç, ‘Yılın En Başarılı Psikoloğu’ ödülüne layık görüldü.</p>
-                                                    </a>
+                                        @foreach($awards as $award)
+                                            <div class="grid-item animated fadeInDown portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">
+                                                <div class="portfolio-item-wrap pb-0">
+                                                    <div class="portfolio-image">
+                                                        <a href="{{$award->link}}" target="_blank">
+                                                            {!! ImageHelper::createTag($award->image,['width' =>[355], 'height' => [200]],['class'=> 'lazy','alt' => $award->title,'title' => $award->title],'lazy') !!}
+                                                        </a>
+                                                    </div>
+                                                    <div class="portfolio-description">
+                                                        <a href="{{$award->link}}" target="_blank">
+                                                            <h3>{{$award->title}}</h3>
+                                                            <p>{{$award->content}}</p>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="grid-item animated fadeInRight portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">
-                                            <div class="portfolio-item-wrap pb-0">
-                                                <div class="portfolio-image">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <img src="{{asset('front/images/slider-1.jpg')}}">
-                                                    </a>
-                                                </div>
-                                                <div class="portfolio-description">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <h3>‘Yılın En Başarılı Psikoloğu’ ödülü</h3>
-                                                        <p>Bu yıl 6’ncısı düzenlenen ’Altın Rehber Yılın Enleri’ ödül töreninde Psikolog M. Yunus Çekiç, ‘Yılın En Başarılı Psikoloğu’ ödülüne layık görüldü.</p>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-item animated fadeInDown portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">
-                                            <div class="portfolio-item-wrap pb-0">
-                                                <div class="portfolio-image">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <img src="{{asset('front/images/slider-1.jpg')}}">
-                                                    </a>
-                                                </div>
-                                                <div class="portfolio-description">
-                                                    <a href="https://www.mynet.com/yunus-cekice-yilin-en-basarili-psikologu-odulu-110104911800" target="_blank">
-                                                        <h3>‘Yılın En Başarılı Psikoloğu’ ödülü</h3>
-                                                        <p>Bu yıl 6’ncısı düzenlenen ’Altın Rehber Yılın Enleri’ ödül töreninde Psikolog M. Yunus Çekiç, ‘Yılın En Başarılı Psikoloğu’ ödülüne layık görüldü.</p>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </section>
                             </div>

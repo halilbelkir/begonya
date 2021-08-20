@@ -11,9 +11,12 @@ class share extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $subject;
+
+    public function __construct($subject = 'Begonya Psikoloji & Aile Danışmanlığı')
     {
-        //
+        $this->subject = $subject;
     }
 
     /**

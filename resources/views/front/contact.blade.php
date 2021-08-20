@@ -7,7 +7,7 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleImage>
+                                <x-front.singleImage :image="'front/images/contact.jpg'">
                                     <x-slot name="title">İletişim</x-slot>
                                 </x-front.singleImage>
                             </div>
@@ -20,21 +20,19 @@
                                         <div class="row m-t-40">
                                             <div class="col-lg-12">
                                                 <address>
-                                                    <strong>Begonya Psikoloji & Aile Danışmanlığı</strong><br>
-                                                    <abbr title="Adres">Adres:</abbr>     Yenişehir, Osmanlı Blv. No:7, 34912 Pendik/İstanbul <br>
-                                                    <abbr title="Telefon">Telefon:</abbr>  <a href="tel:+905303898213" class="black">+90 (530) 389 82 13</a><br>
-                                                    <abbr title="E-Mail">E-Mail:</abbr>    <a href="mailto:info@begonyapsikoloji.com" class="black">info@begonyapsikoloji.com</a><br>
+                                                    <strong>{{config('app.company_name')}}</strong><br>
+                                                    @if(!empty($settings->adres))<abbr title="Adres">Adres:</abbr> {{$settings->adres}}<br>@endif
+                                                    @if(!empty($settings->telefon))<abbr title="Telefon">Telefon:</abbr>  <a href="tel:{{$settings->telefon}}" class="black">{{$settings->telefon}}</a><br>@endif
+                                                    @if(!empty($settings->email))<abbr title="E-Mail">E-Mail:</abbr>    <a href="mailto:{{$settings->email}}" class="black">{{$settings->email}}</a><br>@endif
                                                 </address>
                                             </div>
                                         </div>
                                         <div class="social-icons m-t-30 social-icons-colored">
                                             <ul>
-                                                <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li class="social-google"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                                <li class="social-pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                                <li class="social-vimeo"><a href="#"><i class="fab fa-vimeo"></i></a></li>
-                                                <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                @if(!empty($settings->facebook))<li class="social-facebook"><a href="{{$settings->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>@endif
+                                                @if(!empty($settings->twitter))<li class="social-twitter"><a href="{{$settings->twitter}}" target="_blank"><i class="fab fa-twitter"></i></a></li>@endif
+                                                @if(!empty($settings->instagram))<li class="social-instagram"><a href="{{$settings->instagram}}" target="_blank"><i class="fab fa-instagram"></i></a></li>@endif
+                                                @if(!empty($settings->linkedin))<li class="social-linkedin"><a href="{{$settings->linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a></li>@endif
                                             </ul>
                                         </div>
                                     </div>

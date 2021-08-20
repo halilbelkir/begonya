@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class singleImage extends Component
 {
+    public $image;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($image = 'front/images/image-not.jpg')
     {
-        //
+        $this->image = $image;
     }
 
     /**

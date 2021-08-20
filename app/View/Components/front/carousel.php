@@ -11,9 +11,10 @@ class carousel extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $images;
+    public function __construct($images)
     {
-        //
+        $this->images = $images;
     }
 
     /**

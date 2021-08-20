@@ -7,7 +7,7 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleImage>
+                                <x-front.singleImage :image="'front/images/references.jpeg'">
                                     <x-slot name="title">Referanslarımız</x-slot>
                                 </x-front.singleImage>
                                 <section>
@@ -16,10 +16,13 @@
                                             <span class="lead">Birlikte çalışmaktan zevk aldığımız harika müşterilerimiz!</span>
                                         </div>
                                         <ul class="grid grid-2-columns">
-                                            <li><a href="#"><img src="{{asset('front/images/1.png')}}" alt=""></a></li>
-                                            <li><a href="#"><img src="{{asset('front/images/2.png')}}" alt=""></a></li>
-                                            <li><a href="#"><img src="{{asset('front/images/3.png')}}" alt=""></a></li>
-                                            <li><a href="#"><img src="{{asset('front/images/4.png')}}" alt=""></a></li>
+                                            @foreach($clients as $client)
+                                                <li>
+                                                    <a href="#">
+                                                        {!! ImageHelper::createTag($client->image,['width' =>[455], 'height' => [455]],['class'=> 'lazy','alt' => config('app.company_name'),'title' => config('app.company_name')],'lazy') !!}
+                                                    </a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </section>

@@ -7,16 +7,12 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.carousel></x-front.carousel>
-                                <x-front.itemDetail>
-                                    <x-slot name="title">Blog Başlık</x-slot>
+                                <x-front.carousel :images="json_decode($blog->images)">
+                                    <x-slot name="title">{{$blog->title}}</x-slot>
+                                </x-front.carousel>
+                                <x-front.itemDetail :title="$blog->title">
                                     <x-slot name="desc">
-                                        <p>
-                                            Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama
-                                            Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama
-                                            Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama
-                                            Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama Blog Açıklama
-                                        </p>
+                                        {!! $blog->content !!}
                                     </x-slot>
                                 </x-front.itemDetail>
                             </div>
