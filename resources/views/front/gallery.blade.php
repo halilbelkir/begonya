@@ -6,9 +6,9 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.single_image :image="'front/images/gallery.jpg'">
+                                <x-front.singleimage :image="'front/images/gallery.jpg'">
                                     <x-slot name="title">Galeri</x-slot>
-                                </x-front.single_image>
+                                </x-front.singleimage>
                                 <section id="page-content">
                                     <nav class="grid-filter gf-creative" data-layout="#portfolio">
                                         <ul>

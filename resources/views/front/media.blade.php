@@ -7,9 +7,9 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.single_image :image="'front/images/media.jpg'">
+                                <x-front.singleimage :image="'front/images/media.jpg'">
                                     <x-slot name="title">Basında Biz</x-slot>
-                                </x-front.single_image>
+                                </x-front.singleimage>
                                 <section>
                                     <div class="container">
                                         <div class="heading-text heading-section text-center">

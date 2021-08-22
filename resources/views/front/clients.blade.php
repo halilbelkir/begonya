@@ -7,9 +7,9 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.single_image :image="'front/images/references.jpeg'">
+                                <x-front.singleimage :image="'front/images/references.jpeg'">
                                     <x-slot name="title">Referanslarımız</x-slot>
-                                </x-front.single_image>
+                                </x-front.singleimage>
                                 <section>
                                     <div class="container">
                                         <div class="heading-text heading-section text-center">

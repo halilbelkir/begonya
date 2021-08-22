@@ -7,9 +7,9 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.single_image :image="'front/images/awards.jpeg'">
+                                <x-front.singleimage :image="'front/images/awards.jpeg'">
                                     <x-slot name="title">Ödüllerimiz</x-slot>
-                                </x-front.single_image>
+                                </x-front.singleimage>
 
                                 <section id="page-content">
                                     <div class="grid-layout grid-3-columns portfolio-item light-bg no-overlay ct-photography ct-media ct-branding ct-Media ct-webdesign shadow" >

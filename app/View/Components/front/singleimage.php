@@ -4,7 +4,7 @@ namespace App\View\Components\front;
 
 use Illuminate\View\Component;
 
-class single_image extends Component
+class singleimage extends Component
 {
     public $image;
     /**
@@ -24,6 +24,6 @@ class single_image extends Component
      */
     public function render()
     {
-        return view('components.front.single-image');
+        return view('components.front.singleimage');
     }
 }
