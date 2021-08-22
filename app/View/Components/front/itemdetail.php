@@ -4,7 +4,7 @@ namespace App\View\Components\front;
 
 use Illuminate\View\Component;
 
-class item_detail extends Component
+class itemdetail extends Component
 {
     /**
      * Create a new component instance.

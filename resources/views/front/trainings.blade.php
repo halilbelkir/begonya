@@ -10,7 +10,7 @@
                                 <x-front.singleimage>
                                     <x-slot name="title">Eğitimler & Derneğimiz</x-slot>
                                 </x-front.singleimage>
-                                <x-front.item_detail>
+                                <x-front.itemdetail>
                                     <x-slot name="desc">
                                         <p>
                                             Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz
@@ -19,7 +19,7 @@
                                             Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz Eğitimler & Derneğimiz
                                         </p>
                                     </x-slot>
-                                </x-front.item_detail>
+                                </x-front.itemdetail>
                             </div>
                         </div>
 
