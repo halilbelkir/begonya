@@ -26,6 +26,6 @@ class itemdetail extends Component
      */
     public function render()
     {
-        return view('components.front.item-detail');
+        return view('components.front.itemdetail');
     }
 }
