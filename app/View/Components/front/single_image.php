@@ -4,7 +4,7 @@ namespace App\View\Components\front;
 
 use Illuminate\View\Component;
 
-class singleImage extends Component
+class single_image extends Component
 {
     public $image;
     /**

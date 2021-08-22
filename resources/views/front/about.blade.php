@@ -11,7 +11,7 @@
 
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleImage :image="'front/images/about.jpg'"></x-front.singleImage>
+                                <x-front.single_image :image="'front/images/about.jpg'"></x-front.single_image>
                                 <div class="post-item-description">
                                     <div class="row">
                                         <div class="col-lg-3">

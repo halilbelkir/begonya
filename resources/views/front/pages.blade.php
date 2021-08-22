@@ -7,7 +7,7 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleImage :image="$pages->image"></x-front.singleImage>
+                                <x-front.single_image :image="$pages->image"></x-front.single_image>
                                 <x-front.item_detail :title="$pages->title">
                                     <x-slot name="desc">
                                         {!! $pages->content !!}

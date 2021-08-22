@@ -7,9 +7,9 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleImage>
+                                <x-front.single_image>
                                     <x-slot name="title">Yurtdışı Online Danışmanlık</x-slot>
-                                </x-front.singleImage>
+                                </x-front.single_image>
                                 <x-front.item_detail>
                                     <x-slot name="desc">
                                         <p>

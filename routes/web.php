@@ -30,7 +30,6 @@
     Route::get('/blog/{seflink}', [App\Http\Controllers\frontController::class, 'blog_detail'])->name('blog.detail');
     Route::get('/basinda-biz', [App\Http\Controllers\frontController::class, 'media'])->name('media');
     Route::get('/iletisim', function () {return view('front.contact');})->name('contact');
-    Route::get('{seflink}', [App\Http\Controllers\frontController::class, 'pages'])->name('front.pages');
     Route::prefix('yonetimpaneli')->group(function ()
     {
         Route::get('/', function () {
@@ -156,3 +155,4 @@
             Route::resource('slider', App\Http\Controllers\sliderController::class);
         });
     });
+    Route::get('{seflink}', [App\Http\Controllers\frontController::class, 'pages'])->name('front.pages');
