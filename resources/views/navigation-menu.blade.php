@@ -177,7 +177,28 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Anasayfa') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('slider.index') }}" :active="request()->routeIs('slider.index')">
+                {{ __('Slider') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('services.index') }}" :active="request()->routeIs('services.index')">
+                {{ __('Hizmetler') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog.index')">
+                {{ __('Blog') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('media.index') }}" :active="request()->routeIs('media.index')">
+                {{ __('Basında Biz') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('awards.index') }}" :active="request()->routeIs('awards.index')">
+                {{ __('Ödüller') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('gallery.index') }}" :active="request()->routeIs('gallery.index')">
+                {{ __('Galeri') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('references.index') }}" :active="request()->routeIs('references.index')">
+                {{ __('Referanslar') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -198,16 +219,34 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
-                </x-jet-responsive-nav-link>
-
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
                 @endif
+                <x-jet-responsive-nav-link href="{{ route('pages.edit',1) }}">
+                    {{ __('Eğitimler') }}
+                </x-jet-responsive-nav-link>
 
+                <x-jet-responsive-nav-link href="{{ route('pages.edit',2) }}">
+                    {{ __('Online Danış.') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('users.index') }}">
+                    {{ __('Kullanıcılar') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('team.index') }}">
+                    {{ __('Takım') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('settings.edit',1) }}">
+                    {{ __('Ayarlar') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('profile.show') }}">
+                    {{ __('Profil') }}
+                </x-jet-responsive-nav-link>
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -215,7 +254,7 @@
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Çıkış Yap') }}
                     </x-jet-responsive-nav-link>
                 </form>
 

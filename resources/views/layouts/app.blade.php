@@ -53,6 +53,7 @@
             var datatables = $('#data-tables').DataTable({
                 processing: true,
                 serverSide: true,
+                scrollX: true,
                 ajax : '@yield('datatables.ajax.url')',
                 columns : @yield('datatables.columns'),
                 language:{"url":"//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"}
