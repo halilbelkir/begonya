@@ -7,11 +7,11 @@
         <i class="fab fa-twitter"></i>
         <span>Twitter</span>
     </a>
-    <a class="btn btn-xs btn-slide btn-whatsapp" href="whatsapp://send?text={{url()->full()}}" >
+    <a class="btn btn-xs btn-slide btn-whatsapp" href="whatsapp://send?text=" >
         <i class="fab fa-whatsapp"></i>
         <span>Whatsapp</span>
     </a>
-    <a class="btn btn-xs btn-slide btn-googleplus" href="mailto:{{$settings->email}}?body={{url()->full()}}&Subject={{$subject}}" target="_top" data-width="80">
+    <a class="btn btn-xs btn-slide btn-googleplus" href="mailto:{{$settings->email}}?body=&Subject={{$subject}}" target="_top" data-width="80">
         <i class="icon-mail"></i>
         <span>Mail</span>
     </a>

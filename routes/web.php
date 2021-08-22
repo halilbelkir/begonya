@@ -36,7 +36,6 @@
         Route::get('/', function () {
             return view('auth.login');
         });
-
         Route::get('/register', [RegisteredUserController::class, 'create'])
             ->middleware('guest')
             ->name('register');
@@ -89,6 +88,7 @@
         Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
             ->middleware('auth')
             ->name('logout');
+
 
         Route::middleware(['auth:sanctum', 'verified'])->group(function ()
         {

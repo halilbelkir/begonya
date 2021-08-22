@@ -2,7 +2,7 @@
 
 return [
 
-    'loading_image' => asset('front/images/loading.gif'),
+    'loading_image' => 'front/images/loading.gif',
     'company_name'  => 'Begonya Psikoloji & Aile Danışmanlığı',
     /*
     |--------------------------------------------------------------------------
