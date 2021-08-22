@@ -10,11 +10,11 @@
                                 <x-front.carousel :images="json_decode($service->images)">
                                     <x-slot name="title">{{$service->title}}</x-slot>
                                 </x-front.carousel>
-                                <x-front.itemDetail :title="$service->title">
+                                <x-front.item_detail :title="$service->title">
                                     <x-slot name="desc">
                                         {!! $service->content !!}
                                     </x-slot>
-                                </x-front.itemDetail>
+                                </x-front.item_detail>
                             </div>
                         </div>
 

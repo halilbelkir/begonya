@@ -8,11 +8,11 @@
                         <div class="post-item">
                             <div class="post-item-wrap">
                                 <x-front.singleImage :image="$pages->image"></x-front.singleImage>
-                                <x-front.itemDetail :title="$pages->title">
+                                <x-front.item_detail :title="$pages->title">
                                     <x-slot name="desc">
                                         {!! $pages->content !!}
                                     </x-slot>
-                                </x-front.itemDetail>
+                                </x-front.item_detail>
                             </div>
                         </div>
 

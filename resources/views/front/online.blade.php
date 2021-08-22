@@ -10,7 +10,7 @@
                                 <x-front.singleImage>
                                     <x-slot name="title">Yurtdışı Online Danışmanlık</x-slot>
                                 </x-front.singleImage>
-                                <x-front.itemDetail>
+                                <x-front.item_detail>
                                     <x-slot name="desc">
                                         <p>
                                             Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık
@@ -19,7 +19,7 @@
                                             Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık Yurtdışı Online Danışmanlık
                                         </p>
                                     </x-slot>
-                                </x-front.itemDetail>
+                                </x-front.item_detail>
                             </div>
                         </div>
 
