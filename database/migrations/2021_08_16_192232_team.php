@@ -18,6 +18,9 @@ class Team extends Migration
             $table->string('ad');
             $table->string('unvan');
             $table->string('aciklama');
+            $table->text('content');
+            $table->text('tag');
+            $table->string('seflink')->unique();
             $table->string('resim')->nullable();
             $table->integer('order')->default('99');
             $table->timestamps();

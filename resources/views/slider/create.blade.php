@@ -42,14 +42,14 @@
                                     <option value="">Buton Link Seçiniz</option>
                                     <optgroup label="Hizmetler">
                                         <option
-                                            @if(old('button_route') == 'services') selected @endif
+                                            @if(old('button_route') == 'services.list') selected @endif
                                         value="services"
                                         >
                                             Hizmetler Hepsi
                                         </option>
                                         @foreach($services as $service)
                                             <option
-                                                @if(old('button_route') == 'services,'.$service->seflink) selected @endif
+                                                @if(old('button_route') == 'services.detail,'.$service->seflink) selected @endif
                                                 value="services,{{$service->seflink}}"
                                             >
                                                     {{$service->title}}
@@ -74,15 +74,15 @@
                                     </optgroup>
                                     <optgroup label="Blog">
                                         <option
-                                            @if(old('button_route') == 'blog') selected @endif
-                                        value="blog"
+                                            @if(old('button_route') == 'blog.list') selected @endif
+                                        value="blog.list"
                                         >
                                             Blog Hepsi
                                         </option>
                                         @foreach($blog as $blogg)
                                             <option
-                                                @if(old('button_route') == 'blog,'.$blogg->seflink) selected @endif
-                                            value="blog,{{$blogg->seflink}}"
+                                                @if(old('button_route') == 'blog.detail,'.$blogg->seflink) selected @endif
+                                            value="blog.detail,{{$blogg->seflink}}"
                                             >
                                                 {{$blogg->title}}
                                             </option>

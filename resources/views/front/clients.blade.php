@@ -13,13 +13,13 @@
                                 <section>
                                     <div class="container">
                                         <div class="heading-text heading-section text-center">
-                                            <span class="lead">Birlikte çalışmaktan zevk aldığımız harika müşterilerimiz!</span>
+                                            <span class="lead">Çözüm ortaklığı olarak danışmanlık verdiğimiz, eğitimler gerçekleştirdiğimiz ve bireysel seanslar için yönlendirme aldığımız kurumlardan bazıları...</span>
                                         </div>
                                         <ul class="grid grid-2-columns">
                                             @foreach($clients as $client)
                                                 <li>
                                                     <a href="#">
-                                                        {!! ImageHelper::createTag($client->image,['width' =>[455], 'height' => [455]],['class'=> 'lazy','alt' => config('app.company_name'),'title' => config('app.company_name')],'lazy') !!}
+                                                        {!! ImageHelper::createTag($client->image,['width' =>[455], 'height' => [455]],['class'=> 'lazy','alt' => $settings->title,'title' => $settings->title],'lazy') !!}
                                                     </a>
                                                 </li>
                                             @endforeach

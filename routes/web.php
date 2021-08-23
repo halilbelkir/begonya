@@ -28,6 +28,7 @@
     Route::get('/galeri', [App\Http\Controllers\frontController::class, 'gallery'])->name('gallery');
     Route::get('/blog', [App\Http\Controllers\frontController::class, 'blog'])->name('blog.list');
     Route::get('/blog/{seflink}', [App\Http\Controllers\frontController::class, 'blog_detail'])->name('blog.detail');
+    Route::get('/ekibimiz/{seflink}', [App\Http\Controllers\frontController::class, 'team_detail'])->name('team.detail');
     Route::get('/basinda-biz', [App\Http\Controllers\frontController::class, 'media'])->name('media');
     Route::get('/iletisim', function () {return view('front.contact');})->name('contact');
     Route::prefix('yonetimpaneli')->group(function ()

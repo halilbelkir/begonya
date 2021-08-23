@@ -127,7 +127,7 @@
                             </x-jet-dropdown-link>
 
                             <x-jet-dropdown-link href="{{ route('team.index') }}">
-                                {{ __('Takım') }}
+                                {{ __('Ekibimiz') }}
                             </x-jet-dropdown-link>
 
                             <x-jet-dropdown-link href="{{ route('settings.edit',1) }}">
@@ -237,7 +237,7 @@
                 </x-jet-responsive-nav-link>
 
                 <x-jet-responsive-nav-link href="{{ route('team.index') }}">
-                    {{ __('Takım') }}
+                    {{ __('Ekibimiz') }}
                 </x-jet-responsive-nav-link>
 
                 <x-jet-responsive-nav-link href="{{ route('settings.edit',1) }}">

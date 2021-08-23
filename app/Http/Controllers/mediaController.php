@@ -64,7 +64,7 @@ class mediaController extends Controller
             }
 
             $image        = $request->file('image');
-            $imageName    = Helpers::seflink($request->get('title')).'-'.time().'.'.$image->extension();
+            $imageName    = 'media-'.time().'.'.$image->extension();
             $target_file   = 'images/front/media';
             $imageName    = $target_file.'/'.$imageName;
             $image->move($target_file,$imageName);
@@ -147,7 +147,7 @@ class mediaController extends Controller
             if(empty($media->image))
             {
                 $image        = $request->file('image');
-                $imageName    = Helpers::seflink($request->get('title')).'-'.time().'.'.$image->extension();
+                $imageName    = 'media-'.time().'.'.$image->extension();
                 $target_file   = 'images/front/media';
                 $imageName    = $target_file.'/'.$imageName;
                 $image->move($target_file,$imageName);

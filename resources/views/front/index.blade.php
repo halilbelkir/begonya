@@ -1,4 +1,17 @@
 <x-front.master>
+    <style>
+        #rev_slider_1068_1 ul li .slotholder:before
+        {
+            content: '';
+            background-color: #00000040;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <section id="slider">
         <div id="rev_slider_1068_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="levano4export" data-source="gallery" style="background-color:transparent;padding:0px;">
             <div id="rev_slider_1068_1" class="rev_slider fullscreenbanner"  data-version="5.4.1">
@@ -15,14 +28,14 @@
                             data-masterspeed="1500"
                             data-thumb="plugins/slider-revolution/assets/images/drink_cover-100x50.jpg"
                             data-rotate="0"
-                            data-saveperformance="off"
-                            data-title="Drinks" >
+                            data-saveperformance="off">
 
                             <img src="{{asset(config('app.loading_image'))}}" alt=""
                                  data-lazyload="{{ ImageHelper::getImage($slide->image, 1920, 1080) }}"
                                  data-bgposition="center center"
                                  data-bgfit="cover"
                                  class="rev-slidebg"
+                                 data-bgcolor="#000"
                                  data-no-retina>
                             @if(!empty($slide->text_1))
                                 <div
@@ -99,7 +112,40 @@
                                 </div>
                             @endif
                             @if(!empty($slide->button_text) && !empty($slide->button_route))
+                                @php
+                                    $route = $slide->button_route;
+                                    if (strstr($route,','))
+                                    {
+                                        $route       = explode(',',$route);
+
+                                        if ($route[0] == 'awards' || $route[0] == 'media')
+                                        {
+                                            $slide_route = $route[1];
+                                        }
+                                        else
+                                        {
+                                            $slide_route = route($route[0],$route[1]);
+                                        }
+                                    }
+                                    else
+                                    {
+                                    	if ($route == 'trainings')
+                                        {
+                                            $slide_route = url($trainings->seflink);
+                                        }
+                                        else if ($route == 'online')
+                                        {
+                                            $slide_route = url($online->seflink);
+                                        }
+                                        else
+                                        {
+                                            $slide_route = route($route);
+                                        }
+
+                                    }
+                                @endphp
                                 <div
+                                    onclick="window.location.href = '{{$slide_route}}'"
                                     class="tp-caption Restaurant-Button rev-btn "
                                     id="slide-3012-layer-4"
                                     data-x="[{{$text_type[$slide->text_type]['button']['data-x']}}]"
@@ -143,7 +189,7 @@
                         dottedOverlay: "none",
                         delay: 1000,
                         navigation: {
-                            keyboardNavigation: "off",
+                            keyboardNavigation: "on",
                             keyboard_direction: "horizontal",
                             mouseScrollNavigation: "off",
                             mouseScrollReverse: "default",
@@ -192,7 +238,7 @@
                         fullScreenAlignForce: "off",
                         fullScreenOffsetContainer: ".header",
                         fullScreenOffset: "",
-                        disableProgressBar: "on",
+                        disableProgressBar: "off",
                         hideThumbsOnMobile: "off",
                         hideSliderAtLimit: 0,
                         hideCaptionAtLimit: 0,

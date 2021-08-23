@@ -123,6 +123,7 @@ class pagesController extends Controller
             $pages->tag         = $request->get('tag');
             $pages->description = $request->get('description');
             $pages->seflink      = $request->get('seflink');
+            $pages->youtube_link = $request->get('youtube_link');
             $pages->save();
 
             Session::flash('message', array('Başarılı!',$request->get('title').' kaydedildi.', 'success'));

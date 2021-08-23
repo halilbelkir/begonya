@@ -19,7 +19,7 @@
                                             @foreach($media as $mediaa)
                                                 <li>
                                                     <a href="{{$mediaa->link}}" target="_blank">
-                                                        {!! ImageHelper::createTag($mediaa->image,['width' =>[190], 'height' => [60]],['class'=> 'lazy','alt' => config('app.company_name'),'title' => config('app.company_name')],'lazy') !!}
+                                                        {!! ImageHelper::createTag($mediaa->image,['width' =>[190], 'height' => [60]],['class'=> 'lazy','alt' => $settings->title,'title' => $settings->title],'lazy') !!}
                                                     </a>
                                                 </li>
                                             @endforeach

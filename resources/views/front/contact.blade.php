@@ -20,7 +20,7 @@
                                         <div class="row m-t-40">
                                             <div class="col-lg-12">
                                                 <address>
-                                                    <strong>{{config('app.company_name')}}</strong><br>
+                                                    <strong>{{$settings->title}}</strong><br>
                                                     @if(!empty($settings->adres))<abbr title="Adres">Adres:</abbr> {{$settings->adres}}<br>@endif
                                                     @if(!empty($settings->telefon))<abbr title="Telefon">Telefon:</abbr>  <a href="tel:{{$settings->telefon}}" class="black">{{$settings->telefon}}</a><br>@endif
                                                     @if(!empty($settings->email))<abbr title="E-Mail">E-Mail:</abbr>    <a href="mailto:{{$settings->email}}" class="black">{{$settings->email}}</a><br>@endif

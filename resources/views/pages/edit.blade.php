@@ -34,12 +34,16 @@
 
                     </div>
 
-                    <div>
+                    <div class="mb-5">
                         <x-jet-label for="content" value="İçerik" />
                         <textarea id="content" name="content" class="mt-1 mb-1 block border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"  placeholder="İçerik" rows="2">@if(empty(old('content'))) {{$pages->content}} @else {{old('content')}} @endif</textarea>
                         <x-jet-input-error for="content" class="mt-2" />
                     </div>
-
+                    <div>
+                        <x-jet-label for="youtube_link" value="Youtube Linkleri (Her linki virgül ile ayırınız.)" />
+                        <textarea id="youtube_link" name="youtube_link" maxlength="160" class="mt-1 mb-1 block border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"  placeholder="Youtube Linkleri (Her linki virgül ile ayırınız.)" rows="2">@if(empty(old('youtube_link'))) {{$pages->youtube_link}} @else {{old('youtube_link')}} @endif</textarea>
+                        <x-jet-input-error for="youtube_link" class="mt-2" />
+                    </div>
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-3 mt-3">
                         <div>
                             <x-jet-label for="tag" value="Etiket (Kelimeleri virgül ile ayırınız.)" />

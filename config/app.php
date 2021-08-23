@@ -3,7 +3,6 @@
 return [
 
     'loading_image' => 'front/images/loading.gif',
-    'company_name'  => 'Begonya Psikoloji & Aile Danışmanlığı',
     /*
     |--------------------------------------------------------------------------
     | Application Name

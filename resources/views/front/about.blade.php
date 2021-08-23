@@ -16,7 +16,7 @@
                                     <div class="row">
                                         <div class="col-lg-3">
                                             <div class="heading-text heading-section">
-                                                <h2>Şirketimiz</h2>
+                                                <h2>Hakkımızda</h2>
                                             </div>
                                         </div>
                                         <div class="col-lg-9">
@@ -41,20 +41,22 @@
         <div class="container">
             <div class="heading-text heading-section text-center">
                 <h2>Ekibimiz</h2>
-                <span class="lead">Günün en mutlu zamanını yaratın!</span>
+                <span class="lead">Samimiyet ve doğru yaklaşım vazgeçilmez ilkemizdir.</span>
             </div>
             <div class="row team-members team-members-shadow m-b-40">
                 @foreach($team as $person)
                     <div class="col-lg-3">
                         <div class="team-member">
-                            <div class="team-image">
-                                {!! ImageHelper::createTag($person->resim,['width' =>[250], 'height' => [230]],['class'=> 'lazy','alt' => $person->ad,'title' => $person->ad],'lazy') !!}
-                            </div>
-                            <div class="team-desc">
-                                <h3>{{$person->ad}}</h3>
-                                <span>{{$person->unvan}}</span>
-                                <p>{{$person->aciklama}}</p>
-                            </div>
+                            <a href="{{route('team.detail',$person->seflink)}}">
+                                <div class="team-image">
+                                    {!! ImageHelper::createTag($person->resim,['width' =>[250], 'height' => [230]],['class'=> 'lazy','alt' => $person->ad,'title' => $person->ad],'lazy') !!}
+                                </div>
+                                <div class="team-desc">
+                                    <h3>{{$person->ad}}</h3>
+                                    <span>{{$person->unvan}}</span>
+                                    <p>{{$person->aciklama}}</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach

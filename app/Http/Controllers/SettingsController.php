@@ -73,21 +73,30 @@ class SettingsController extends Controller
         try
         {
             $attribute = array(
-                'telefon'    => 'Telefon',
-                'email'      => 'E-Mail',
-                'adres'      => 'Adres',
-                'hakkimizda' => 'Hakkimizda',
-                'facebook'   => 'Facebook',
-                'instagram'  => 'Instagram',
+                'title'           => 'Site Başlık',
+                'telefon'         => 'Telefon',
+                'email'           => 'E-Mail',
+                'adres'           => 'Adres',
+                'hakkimizda'      => 'Hakkimizda',
+                'facebook'        => 'Facebook',
+                'instagram'       => 'Instagram',
+                'tag'             => 'Etiket',
+                'description'     => 'Site Açıklama',
+                'recipient_email' => 'Alıcı E-mail',
             );
 
             $rules = array(
-                'telefon'    => 'required',
-                'adres'      => 'required',
-                'email'      => 'required|email',
-                'hakkimizda' => 'required',
-                'facebook'   => 'nullable|url',
-                'instagram'  => 'nullable|url',
+                'title'           => 'required',
+                'telefon'         => 'required',
+                'adres'           => 'required',
+                'email'           => 'required|email',
+                'hakkimizda'      => 'required',
+                'facebook'        => 'nullable|url',
+                'instagram'       => 'nullable|url',
+                'linkedin'        => 'nullable|url',
+                'tag'             => 'required',
+                'recipient_email' => 'required|email',
+                'description'     => 'required|max:160',
             );
 
             $validator = Validator::make($request->all(), $rules);
@@ -99,14 +108,19 @@ class SettingsController extends Controller
                     ->withInput();
             }
 
-            $settings             = Settings::find($id);
-            $settings->telefon    = $request->get('telefon');
-            $settings->email      = $request->get('email');
-            $settings->adres      = $request->get('adres');
-            $settings->hakkimizda = $request->get('hakkimizda');
-            $settings->facebook   = $request->get('facebook');
-            $settings->instagram  = $request->get('instagram');
-            $settings->fax        = $request->get('fax');
+            $settings                   = Settings::find($id);
+            $settings->telefon          = $request->get('telefon');
+            $settings->email            = $request->get('email');
+            $settings->adres            = $request->get('adres');
+            $settings->hakkimizda       = $request->get('hakkimizda');
+            $settings->facebook         = $request->get('facebook');
+            $settings->instagram        = $request->get('instagram');
+            $settings->linkedin         = $request->get('linkedin');
+            $settings->title            = $request->get('title');
+            $settings->tag              = $request->get('tag');
+            $settings->description      = $request->get('description');
+            $settings->recipient_email  = $request->get('recipient_email');
+            $settings->fax              = $request->get('fax');
             $settings->save();
 
             Session::flash('message', array('Başarılı!','Ayarlar kaydedildi.', 'success'));

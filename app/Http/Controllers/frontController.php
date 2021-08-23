@@ -195,6 +195,12 @@ class frontController extends Controller
         return view('front.blog.detail',compact('blog'));
     }
 
+    public function team_detail($seflink)
+    {
+        $team = Team::where('seflink',$seflink)->first();
+        return view('front.team_detail',compact('team'));
+    }
+
     public function media()
     {
         $media = Media::orderBy('order','asc')->get();

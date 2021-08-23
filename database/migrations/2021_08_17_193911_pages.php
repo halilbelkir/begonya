@@ -19,6 +19,7 @@ class Pages extends Migration
             $table->text('content');
             $table->string('tag');
             $table->string('description');
+            $table->text('youtube_link')->nullable();
             $table->string('seflink')->unique();
             $table->text('image')->nullable();
             $table->timestamps();

@@ -59,15 +59,15 @@
                                     <option value="">Buton Link Seçiniz</option>
                                     <optgroup label="Hizmetler">
                                         <option
-                                            @if(old('button_route') == 'services') selected @elseif($slider->button_route == 'services') selected @endif
-                                        value="services"
+                                            @if(old('button_route') == 'services.list') selected @elseif($slider->button_route == 'services.list') selected @endif
+                                        value="services.list"
                                         >
                                             Hizmetler Hepsi
                                         </option>
                                         @foreach($services as $service)
                                             <option
-                                                @if(old('button_route') == 'services,'.$service->seflink) selected @elseif($slider->button_route == 'services,'.$service->seflink) selected @endif
-                                            value="services,{{$service->seflink}}"
+                                                @if(old('button_route') == 'services.detail,'.$service->seflink) selected @elseif($slider->button_route == 'services.detail,'.$service->seflink) selected @endif
+                                            value="services.detail,{{$service->seflink}}"
                                             >
                                                 {{$service->title}}
                                             </option>
@@ -91,15 +91,15 @@
                                     </optgroup>
                                     <optgroup label="Blog">
                                         <option
-                                            @if(old('button_route') == 'blog') selected @elseif($slider->button_route == 'blog') selected @endif
-                                        value="blog"
+                                            @if(old('button_route') == 'blog.list') selected @elseif($slider->button_route == 'blog.list') selected @endif
+                                        value="blog.list"
                                         >
                                             Blog Hepsi
                                         </option>
                                         @foreach($blog as $blogg)
                                             <option
-                                                @if(old('button_route') == 'blog,'.$blogg->seflink) selected @elseif($slider->button_route == 'blog,'.$blogg->seflink) selected @endif
-                                            value="blog,{{$blogg->seflink}}"
+                                                @if(old('button_route') == 'blog.detail,'.$blogg->seflink) selected @elseif($slider->button_route == 'blog.detail,'.$blogg->seflink) selected @endif
+                                            value="blog.detail,{{$blogg->seflink}}"
                                             >
                                                 {{$blogg->title}}
                                             </option>

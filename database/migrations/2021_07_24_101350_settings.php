@@ -15,13 +15,18 @@ class Settings extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->string('adres');
             $table->string('telefon');
             $table->string('email');
             $table->string('fax')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
             $table->text('hakkimizda');
+            $table->string('tag');
+            $table->string('description');
+            $table->string('recipient_email');
             $table->timestamps();
         });
     }

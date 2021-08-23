@@ -47,6 +47,9 @@ class teamController extends Controller
                 'ad'       => 'Ad',
                 'unvan'    => 'Ünvan',
                 'aciklama' => 'Açıklama',
+                'content'  => 'İçeri',
+                'tag'      => 'Etiket',
+                'seflink'   => 'Seflink',
                 'resim'    => 'Resim',
             );
 
@@ -54,6 +57,9 @@ class teamController extends Controller
                 'ad'       => 'required',
                 'unvan'    => 'required',
                 'aciklama' => 'required',
+                'content'  => 'required',
+                'tag'      => 'required',
+                'seflink'   => 'required|unique:team,seflink',
                 'resim'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             );
 
@@ -77,6 +83,9 @@ class teamController extends Controller
             $team->ad       = $request->get('ad');
             $team->unvan    = $request->get('unvan');
             $team->aciklama = $request->get('aciklama');
+            $team->content  = $request->get('content');
+            $team->tag      = $request->get('tag');
+            $team->seflink   = $request->get('seflink');
             $team->resim    = $imageName;
 
             $team->save();
@@ -130,12 +139,18 @@ class teamController extends Controller
                 'ad'       => 'Ad',
                 'unvan'    => 'Ünvan',
                 'aciklama' => 'Açıklama',
+                'content'  => 'İçerik',
+                'tag'      => 'Etiket',
+                'seflink'   => 'Seflink',
             );
 
             $rules = array(
                 'ad'       => 'required',
                 'unvan'    => 'required',
                 'aciklama' => 'required',
+                'content'  => 'required',
+                'tag'      => 'required',
+                'seflink'   => 'required|unique:team,seflink,'.$id,'id',
             );
 
             $team = Team::find($id);
@@ -167,6 +182,9 @@ class teamController extends Controller
             $team->ad       = $request->get('ad');
             $team->unvan    = $request->get('unvan');
             $team->aciklama = $request->get('aciklama');
+            $team->content  = $request->get('content');
+            $team->tag      = $request->get('tag');
+            $team->seflink   = $request->get('seflink');
             $team->save();
 
             Session::flash('message', array('Başarılı!','Kişi kaydedildi.', 'success'));
