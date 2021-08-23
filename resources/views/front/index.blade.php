@@ -19,7 +19,7 @@
                             data-title="Drinks" >
 
                             <img src="{{asset(config('app.loading_image'))}}" alt=""
-                                 data-lazyload="{{ ImageHelper::getImage($slide->image, 1600, 500) }}"
+                                 data-lazyload="{{ ImageHelper::getImage($slide->image, 1920, 1080) }}"
                                  data-bgposition="center center"
                                  data-bgfit="cover"
                                  class="rev-slidebg"
