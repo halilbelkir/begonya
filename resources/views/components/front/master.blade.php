@@ -45,8 +45,8 @@
 <header @if(!empty(Request::segment(1))) class="dark" @endif>
     <div class="new-logo">
         <a href="{{route('index')}}">
-            <img src="{{asset('front/images/logo-light.png')}}" class="light-logo">
-            <img src="{{asset('front/images/logo-dark.png')}}" class="dark-logo">
+            <img src="{{asset('front/images/logo-light.png')}}" height="90" alt="{{$settings->title}}" title="{{$settings->title}}" class="light-logo">
+            <img src="{{asset('front/images/logo-dark.png')}}" height="90" alt="{{$settings->title}}" title="{{$settings->title}}" class="dark-logo">
         </a>
     </div>
     <a id="hamburger-icon" href="#" title="Menu">
