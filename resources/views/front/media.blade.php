@@ -7,7 +7,7 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <x-front.singleimage :image="'front/images/about-banner.jpg'">
+                                <x-front.singleimage :image="'front/images/media.jpg'">
                                     <x-slot name="title">Basında Biz</x-slot>
                                 </x-front.singleimage>
                                 <section>
