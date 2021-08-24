@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :title="'Basında Biz'" :image="'front/images/media.jpg'">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">

@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :title="$team->ad" :image="$team->resim" :keywords="$team->tag" :description="$team->description">
     <section class="profile-content">
         <div class="profile-image" style="background-image:url({{ ImageHelper::getImage($team->resim, 1300, 1200) }})">
             <div class="bg-overlay" data-style="10"></div>

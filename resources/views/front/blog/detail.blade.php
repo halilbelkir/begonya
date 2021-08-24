@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :title="$blog->title" :keywords="$blog->tag" :description="$blog->description" :image="json_decode($blog->images,true)[0]['image']">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">

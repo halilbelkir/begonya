@@ -11,7 +11,7 @@
                                     <x-slot name="title">Ödüllerimiz</x-slot>
                                 </x-front.singleimage>
 
-                                <section id="page-content">
+                                <section id="page-content" class="awards">
                                     <div class="grid-layout grid-3-columns portfolio-item light-bg no-overlay ct-photography ct-media ct-branding ct-Media ct-webdesign shadow" >
                                         @foreach($awards as $award)
                                             <div class="grid-item animated fadeInDown portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">

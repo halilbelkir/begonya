@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class sendMail extends Mailable
+class sendmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +16,9 @@ class sendMail extends Mailable
      *
      * @return void
      */
-    public function __construct($veriler)
+    public function __construct($datas)
     {
-        $this->veriler = $veriler;
+        $this->datas = $datas;
     }
 
     /**
@@ -28,8 +28,8 @@ class sendMail extends Mailable
      */
     public function build()
     {
-        $veriler = $this->veriler;
-        $konu    = $veriler['konu'];
-        return $this->subject($konu)->view('mail.sendmail',compact('veriler'));
+        $datas   = $this->datas;
+        $subject = $datas['subject'];
+        return $this->subject($subject)->view('mail.sendmail',compact('datas'));
     }
 }

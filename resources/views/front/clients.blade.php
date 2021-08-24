@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :title="'Referanslarımız'" :image="'front/images/references.jpeg'">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">

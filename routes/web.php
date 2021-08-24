@@ -30,7 +30,10 @@
     Route::get('/blog/{seflink}', [App\Http\Controllers\frontController::class, 'blog_detail'])->name('blog.detail');
     Route::get('/ekibimiz/{seflink}', [App\Http\Controllers\frontController::class, 'team_detail'])->name('team.detail');
     Route::get('/basinda-biz', [App\Http\Controllers\frontController::class, 'media'])->name('media');
+    Route::get('/site-haritasi', [App\Http\Controllers\frontController::class, 'sitemap'])->name('sitemap');
     Route::get('/iletisim', function () {return view('front.contact');})->name('contact');
+    Route::get('/404', function () {return view('front.notfound');})->name('notfound');
+    Route::post('/gonder', [App\Http\Controllers\frontController::class, 'send'])->name('send');
     Route::prefix('yonetimpaneli')->group(function ()
     {
         Route::get('/', function () {
@@ -141,6 +144,9 @@
             Route::get('slider/destroy/{id}', [App\Http\Controllers\sliderController::class, 'destroy'])->name('slide.destroy');
             Route::get('slider/destroy-image/{id}', [App\Http\Controllers\sliderController::class, 'destroyImage'])->name('slider.destroy.image');
             Route::post('slider/sortable', [App\Http\Controllers\sliderController::class, 'sortable'])->name('slider.sortable');
+
+            Route::get('form/datatables', [App\Http\Controllers\formController::class, 'datatable'])->name('form.datatables');
+            Route::get('form', [App\Http\Controllers\formController::class, 'index'])->name('form.index');
 
             Route::resource('users', App\Http\Controllers\usersController::class);
             Route::resource('settings', App\Http\Controllers\SettingsController::class);

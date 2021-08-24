@@ -1,9 +1,8 @@
-<x-front.master>
+<x-front.master :title="$service->title" :keywords="$service->tag" :description="$service->description" :image="json_decode($service->images,true)[0]['image']">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">
                 <div class="content col-lg-12">
-
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
@@ -17,7 +16,6 @@
                                 </x-front.itemdetail>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

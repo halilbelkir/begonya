@@ -9,7 +9,7 @@
                                 <x-front.singleimage :image="'front/images/gallery.jpg'">
                                     <x-slot name="title">Galeri</x-slot>
                                 </x-front.singleimage>
-                                <section id="page-content">
+                                <section id="page-content" style="padding: 30px 0;">
                                     <nav class="grid-filter gf-creative" data-layout="#portfolio">
                                         <ul>
                                             <li class="active"><a href="#" data-category="*">Hepsi</a></li>
@@ -23,7 +23,7 @@
                                         @foreach($gallery as $images)
                                             @foreach(json_decode($images->images) as $image)
                                                 <div class="portfolio-item img-zoom {{App\Helpers\Helpers::seflink($images->category_name)}}">
-                                                    <a title="Kategori 1" data-lightbox="gallery-image" href="{{asset($image->image)}}">
+                                                    <a title="{{$images->category_name}}" data-lightbox="gallery-image" href="{{asset($image->image)}}">
                                                         {!! ImageHelper::createTag($image->image,['width' =>[355], 'height' => [200]],['class'=> 'lazy','alt' => $images->category_name,'title' => $images->category_name],'lazy') !!}
                                                     </a>
                                                 </div>

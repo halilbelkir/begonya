@@ -1,14 +1,9 @@
-<x-front.master>
-
-
-
+<x-front.master :title="'Hakkımızda'">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">
                 <div class="content col-lg-12">
-
                     <div id="blog" class="single-post">
-
                         <div class="post-item">
                             <div class="post-item-wrap">
                                 <x-front.singleimage :image="'front/images/about_banner.jpg'"></x-front.singleimage>
@@ -30,22 +25,20 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="ekibimiz">
         <div class="container">
             <div class="heading-text heading-section text-center">
                 <h2>Ekibimiz</h2>
                 <span class="lead">Samimiyet ve doğru yaklaşım vazgeçilmez ilkemizdir.</span>
             </div>
-            <div class="row team-members team-members-shadow m-b-40">
+            <div class="row team-members team-members-shadow m-b-40 d-flex justify-content-center">
                 @foreach($team as $person)
-                    <div class="col-lg-3">
+                    <div class="col-md-6 col-sm-6 col-lg-3">
                         <div class="team-member">
                             <a href="{{route('team.detail',$person->seflink)}}">
                                 <div class="team-image">

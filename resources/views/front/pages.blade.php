@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :title="$pages->title" :image="$pages->image" :keywords="$pages->tag" :description="$pages->description">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">

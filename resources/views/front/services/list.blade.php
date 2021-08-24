@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :title="'Hizmetlerimiz'">
     <section id="page-content">
         <div class="container">
             <div class="page-title">

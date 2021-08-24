@@ -130,6 +130,10 @@
                                 {{ __('Ekibimiz') }}
                             </x-jet-dropdown-link>
 
+                            <x-jet-dropdown-link href="{{ route('form.index') }}">
+                                {{ __('Talepler') }}
+                            </x-jet-dropdown-link>
+
                             <x-jet-dropdown-link href="{{ route('settings.edit',1) }}">
                                 {{ __('Ayarlar') }}
                             </x-jet-dropdown-link>
@@ -238,6 +242,10 @@
 
                 <x-jet-responsive-nav-link href="{{ route('team.index') }}">
                     {{ __('Ekibimiz') }}
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('form.index') }}">
+                    {{ __('Talepler') }}
                 </x-jet-responsive-nav-link>
 
                 <x-jet-responsive-nav-link href="{{ route('settings.edit',1) }}">

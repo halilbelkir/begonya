@@ -4,7 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="Zaurac" />
-    <meta name="description" content="Begonya Psikoloji">
+
+    @php $new_title = empty($title) ? $settings->title : $title.' | '.$settings->title  @endphp
+
+    <meta name="keywords" content="{{$settings->tag}}{{!empty($keywords) ? ','.$keywords : ''}}">
+    <meta name="description" content="{{empty($description) ? $settings->description : $description}}">
+    <meta property="og:image" content="{{empty($image) ? asset('front/images/about_banner.jpg') : asset($image)}}">
+    <meta property="og:title" style="text-transform:capitalize;" content="{{$new_title}}">
+    <title>{{$new_title}}</title>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="apple-touch-icon" sizes="57x57" href="/front/images/fav/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/front/images/fav/apple-icon-60x60.png">
@@ -20,13 +28,17 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/front/images/fav/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/front/images/fav/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/front/images/fav/ms-icon-144x144.png">
-    <title>{{$settings->title}}</title>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto%3A700%2C400%2C300%2C500" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
-
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A700%2C400%2C300%2C500" onload="this.rel='stylesheet'" property="stylesheet" type="text/css" media="all" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" onload="this.rel='stylesheet'">
+    <link rel="preload" as="image" href="{{asset('front/images/logo-light.png')}}">
+    <link rel="preload" as="image" href="{{asset('front/images/logo-dark.png')}}">
+    <link rel="preload" as="font" href="{{asset('/front/webfonts/inspiro-icons_ijzgpf.ttf')}}"  type="font/ttf" crossorigin>
+    <link rel="preload" as="font" href="{{asset('/front/webfonts/inspiro-icons_ijzgpf.woff')}}"  type="font/woff2" crossorigin>
+    @yield('link-preload-image')
     <link rel="stylesheet" href="{{mix('css/front/front.css')}}" />
 </head>
 <body>
@@ -76,6 +88,11 @@
 
 
 <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+
+<div class="loading">
+    <img src="{{config('app.loading_image')}}">
+</div>
+
 <script src="{{mix('js/front/front.js')}}"></script>
 @yield('js')
 </body>

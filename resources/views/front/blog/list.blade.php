@@ -1,8 +1,6 @@
-<x-front.master>
+<x-front.master :title="'Blog'">
     <section id="page-content">
         <div class="container">
-
-
             <div class="page-title">
                 <h1>Blog</h1>
                 <div class="breadcrumb float-left pl-0">
@@ -12,10 +10,7 @@
                     </ul>
                 </div>
             </div>
-
-
             <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
-
                 @foreach($blog as $data)
                     <div class="post-item border">
                         <div class="post-item-wrap shadow">
@@ -32,9 +27,7 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
-
     </section>
 </x-front.master>

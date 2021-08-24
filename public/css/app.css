@@ -1115,6 +1115,9 @@ select {
 .z-50 {
 	z-index: 50;
 }
+.order-last {
+	order: 9999;
+}
 .col-span-6 {
 	grid-column: span 6 / span 6;
 }
@@ -2340,12 +2343,12 @@ select {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
-	.md\:grid-cols-1 {
-		grid-template-columns: repeat(1, minmax(0, 1fr));
-	}
-
 	.md\:grid-cols-4 {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.md\:grid-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 
 	.md\:gap-6 {
@@ -2370,12 +2373,12 @@ select {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
-	.lg\:grid-cols-1 {
-		grid-template-columns: repeat(1, minmax(0, 1fr));
-	}
-
 	.lg\:grid-cols-5 {
 		grid-template-columns: repeat(5, minmax(0, 1fr));
+	}
+
+	.lg\:grid-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 
 	.lg\:px-8 {
@@ -2389,12 +2392,12 @@ select {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
-	.xl\:grid-cols-1 {
-		grid-template-columns: repeat(1, minmax(0, 1fr));
-	}
-
 	.xl\:grid-cols-6 {
 		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	.xl\:grid-cols-1 {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }
 

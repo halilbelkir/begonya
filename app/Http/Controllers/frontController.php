@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\sendmail;
 use App\Models\Awards;
 use App\Models\Blog;
 use App\Models\Gallery;
@@ -9,9 +10,15 @@ use App\Models\Media;
 use App\Models\Pages;
 use App\Models\References;
 use App\Models\Services;
+use App\Models\Settings;
 use App\Models\Slider;
 use App\Models\Team;
+use App\Models\Form;
+use Carbon\Carbon;
+use Cookie,Validator,Session;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class frontController extends Controller
 {
@@ -174,6 +181,12 @@ class frontController extends Controller
     public function pages($seflink)
     {
         $pages = Pages::where('seflink',$seflink)->first();
+
+        if (!$pages)
+        {
+            return view('front.notfound',compact('pages'));
+        }
+
         return view('front.pages',compact('pages'));
     }
 
@@ -205,5 +218,78 @@ class frontController extends Controller
     {
         $media = Media::orderBy('order','asc')->get();
         return view('front.media',compact('media'));
+    }
+
+    public function send(Request $request)
+    {
+        try
+        {
+
+            if (!empty(Cookie::get('form')))
+            {
+                Session::flash('message', array('Başarısız!','Lütfen 2 dakika sonra tekrar deneyiniz.', 'danger'));
+                return redirect()->route('contact');
+            }
+
+
+            $attribute = array(
+                'name'    => 'Ad & Soyad',
+                'email'   => 'E-Mail',
+                'message' => 'Mesajınız',
+            );
+
+            $rules = array(
+                'name'    => 'required',
+                'email'   => 'required|email',
+                'message' => 'required',
+            );
+
+
+            $validator = Validator::make($request->all(), $rules);
+            $validator->setAttributeNames($attribute);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            $form          = new Form;
+            $form->name    = $request->get('name');
+            $form->email   = $request->get('email');
+            $form->message = $request->get('message');
+
+            $form->save();
+
+            Session::flash('message', array('Başarılı!','Form Gönderildi. En kısa süre içerisinde sizinle irtibata geçilecek.', 'success'));
+
+            $settings = Settings::find(1);
+            $datas    = array(
+                'name'    => $request->get('name'),
+                'email'   => $request->get('email'),
+                'message' => $request->get('message'),
+                'subject' => 'İletişim Formu'
+            );
+            Mail::to($settings->recipient_email)->send(new sendmail($datas));
+
+            Cookie::queue('form', true, 2);
+        }
+        catch (\Exception $e)
+        {
+            Session::flash('message', array('Başarısız!','Hata! Lütfen tekrar deneyiniz.', 'danger'));
+        }
+
+        return redirect()->route('contact');
+    }
+
+    public function sitemap()
+    {
+        $blog      = Blog::orderBy('order','asc')->get();
+        $services  = Services::orderBy('order','asc')->get();
+        $pages     = Pages::all();
+        $team      = Team::all();
+        $now       = Carbon::now()->toAtomString();
+        $content   = view('front.sitemap', compact('now','blog','services','pages','team'));
+        return response($content)->header('Content-Type', 'application/xml');
     }
 }

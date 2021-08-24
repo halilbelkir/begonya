@@ -11,9 +11,18 @@ class master extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $title;
+    public $keywords;
+    public $description;
+    public $image;
+
+    public function __construct($title = null, $keywords = null, $description = null, $image = null)
     {
-        //
+        $this->image       = $image;
+        $this->title       = $title;
+        $this->description = $description;
+        $this->keywords    = $keywords;
     }
 
     /**

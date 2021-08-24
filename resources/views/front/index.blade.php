@@ -1,4 +1,5 @@
 <x-front.master>
+
     <style>
         #rev_slider_1068_1 ul li .slotholder:before
         {
@@ -18,6 +19,11 @@
                 <ul>
 
                     @foreach($slider as $order => $slide)
+                        @if($order == 0)
+                            @section('preload')
+                                <link rel="preload" as="image" href="{{ ImageHelper::getImage($slide->image, 1920, 1080) }}">
+                            @endsection
+                        @endif
                         <li data-index="rs-{{$order}}"
                             data-transition="slideoverup"
                             data-slotamount="7"

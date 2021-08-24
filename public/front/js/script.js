@@ -11,3 +11,9 @@ $( document ).ready(function() {
         return false;
     });
 });
+
+function loading()
+{
+    $(".loading").fadeToggle();
+}
+
