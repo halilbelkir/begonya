@@ -28,7 +28,8 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/front/images/fav/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/front/images/fav/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/front/images/fav/ms-icon-144x144.png">
-
+    <meta name="theme-color" content="#52cc7f">
+    <link rel="manifest" href="/front/manifest.json">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
