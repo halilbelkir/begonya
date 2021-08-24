@@ -98,6 +98,6 @@
 
 <script src="{{mix('js/front/front.js')}}"></script>
 @yield('js')
-<script src="{{mix('js/front/front2.js')}}" async></script>
+<script src="{{mix('js/front/front2.js')}}"></script>
 </body>
 </html>
