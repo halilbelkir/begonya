@@ -40,6 +40,8 @@
     <link rel="preload" as="font" href="{{asset('/front/webfonts/inspiro-icons_ijzgpf.woff')}}"  type="font/woff2" crossorigin>
     @yield('link-preload-image')
     <link rel="stylesheet" href="{{mix('css/front/front.css')}}" />
+    <link rel="alternate" href="{{ route('index') }}" hreflang="x-default" />
+    <link rel="alternate" href="{{ route('index') }}" hreflang="tr" />
 </head>
 <body>
 <header @if(!empty(Request::segment(1))) class="dark" @endif>
