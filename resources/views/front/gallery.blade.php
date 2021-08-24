@@ -1,4 +1,7 @@
 <x-front.master>
+    @section('preload')
+        <link rel="preload" as="image" href="{{ ImageHelper::getImage('front/images/gallery.jpg', 1200, 620) }}">
+    @endsection
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">
