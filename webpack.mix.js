@@ -31,10 +31,13 @@ mix.js('resources/js/app.js', 'public/js')
             Public + 'front/js/revolution.extension.parallax.min.js',
             Public + 'front/js/revolution.extension.slideanims.min.js',
             Public + 'front/js/revolution.extension.video.min.js',
+        ], Public + 'js/front/front.js')
+    .combine(
+        [
             Public + 'front/js/plugins.js',
             Public + 'front/js/functions.js',
             Public + 'front/js/script.js',
-        ], Public + 'js/front/front.js')
+        ], Public + 'js/front/front2.js')
     .styles(
         [
             Public + 'front/css/plugins.css',
