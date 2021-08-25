@@ -67,18 +67,15 @@
         <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCxKM3K1kNRjTV2k3_--LMQU-Ulxzu8J50'></script>
         <script type="text/javascript" src="{{asset('front/js/gmap3.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('front/js/map-styles.js')}}"></script>
+        @if (session('message'))
+            <script>
+                $.notify({
+                    title: '{{ session('message')[0] }}',
+                    message: '{{ session('message')[1] }}'
+                },{
+                    type: '{{session('message')[2]}}'
+                });
+            </script>
+        @endif
     @endsection
 </x-front.master>
-
-@if (session('message'))
-    <script>
-        $.notify({
-            // options
-            title: '{{ session('message')[0] }}',
-            message: '{{ session('message')[1] }}'
-        },{
-            // settings
-            type: '{{session('message')[2]}}'
-        });
-    </script>
-@endif

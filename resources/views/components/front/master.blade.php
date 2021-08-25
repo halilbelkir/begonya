@@ -97,7 +97,7 @@
 </div>
 
 <script src="{{mix('js/front/front.js')}}"></script>
-@yield('js')
 <script src="{{mix('js/front/front2.js')}}"></script>
+@yield('js')
 </body>
 </html>
