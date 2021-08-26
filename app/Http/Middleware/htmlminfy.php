@@ -25,7 +25,7 @@
             $response = $next($request);
             $buffer   = $response->getContent();
 
-            if (empty($segments['0']) || $segments['0'] != 'media-manager' && $_SERVER['SERVER_NAME'] != 'sixtcomtr.memo')
+            if (empty($segments['0']) || $segments['0'] != 'yonetimpaneli')
             {
                 if (strpos($buffer, '<pre>') !== false) {
                     $replace = array(

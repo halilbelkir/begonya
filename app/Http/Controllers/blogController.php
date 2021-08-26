@@ -90,6 +90,7 @@ class blogController extends Controller
             $blog->tag         = $request->get('tag');
             $blog->description = $request->get('description');
             $blog->seflink      = $request->get('seflink');
+            $blog->youtube_link = $request->get('youtube_link');
             $blog->images      = json_encode($images);
 
             $blog->save();
@@ -198,6 +199,8 @@ class blogController extends Controller
             $blog->content     = $request->get('content');
             $blog->tag         = $request->get('tag');
             $blog->description = $request->get('description');
+            $blog->seflink      = $request->get('seflink');
+            $blog->youtube_link = $request->get('youtube_link');
             $blog->save();
 
             Session::flash('message', array('Başarılı!','Blog kaydedildi.', 'success'));

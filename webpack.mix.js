@@ -20,15 +20,6 @@ mix.js('resources/js/app.js', 'public/js')
         [
             Public + 'front/js/jquery.js',
             Public + 'front/js/jquery-ui.js',
-        ], Public + 'js/front/front.js')
-    .combine(
-        [
-            Public + 'front/js/plugins.js',
-            Public + 'front/js/functions.js',
-            Public + 'front/js/script.js',
-        ], Public + 'js/front/front2.js')
-    .combine(
-        [
             Public + 'front/js/jquery.themepunch.tools.min.js',
             Public + 'front/js/jquery.themepunch.revolution.min.js',
             Public + 'front/js/revolution.extension.actions.min.js',
@@ -40,8 +31,10 @@ mix.js('resources/js/app.js', 'public/js')
             Public + 'front/js/revolution.extension.parallax.min.js',
             Public + 'front/js/revolution.extension.slideanims.min.js',
             Public + 'front/js/revolution.extension.video.min.js',
-        ],Public + 'js/front/index.js'
-    )
+            Public + 'front/js/plugins.js',
+            Public + 'front/js/functions.js',
+            Public + 'front/js/script.js',
+        ], Public + 'js/front/front.js')
     .styles(
         [
             Public + 'front/css/plugins.css',

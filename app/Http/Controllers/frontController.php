@@ -168,7 +168,7 @@ class frontController extends Controller
 
     public function clients()
     {
-        $clients = References::all();
+        $clients = References::orderBy('order','asc')->get();
         return view('front.clients',compact('clients'));
     }
 
