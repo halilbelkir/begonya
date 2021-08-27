@@ -42,7 +42,7 @@
                         <div class="team-member">
                             <a href="{{route('team.detail',$person->seflink)}}">
                                 <div class="team-image">
-                                    {!! ImageHelper::createTag($person->resim,['width' =>[250], 'height' => [230]],['class'=> 'lazy','alt' => $person->ad,'title' => $person->ad],'lazy') !!}
+                                    {!! ImageHelper::createTag($person->resim,['width' =>[250], 'height' => [230]],['class'=> 'late-load','alt' => $person->ad,'title' => $person->ad],'lazy') !!}
                                 </div>
                                 <div class="team-desc">
                                     <h3>{{$person->ad}}</h3>

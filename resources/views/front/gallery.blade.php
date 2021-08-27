@@ -27,7 +27,7 @@
                                             @foreach(json_decode($images->images) as $image)
                                                 <div class="portfolio-item img-zoom {{App\Helpers\Helpers::seflink($images->category_name)}}">
                                                     <a title="{{$images->category_name}}" data-lightbox="gallery-image" href="{{asset($image->image)}}">
-                                                        {!! ImageHelper::createTag($image->image,['width' =>[355], 'height' => [200]],['class'=> 'lazy','alt' => $images->category_name,'title' => $images->category_name],'lazy') !!}
+                                                        {!! ImageHelper::createTag($image->image,['width' =>[355], 'height' => [200]],['class'=> 'late-load','alt' => $images->category_name,'title' => $images->category_name],'lazy') !!}
                                                     </a>
                                                 </div>
                                             @endforeach

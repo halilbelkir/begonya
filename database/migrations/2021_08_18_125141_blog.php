@@ -20,6 +20,7 @@ class Blog extends Migration
             $table->text('content');
             $table->string('tag');
             $table->string('description');
+            $table->text('youtube_link')->nullable();
             $table->string('seflink')->unique();
             $table->integer('order')->default('99');
             $table->text('images')->nullable()->default(new Expression('(JSON_ARRAY())'));

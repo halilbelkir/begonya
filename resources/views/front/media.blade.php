@@ -15,11 +15,11 @@
                                         <div class="heading-text heading-section text-center">
                                             <span class="lead">Haberlerimiz her yerde!</span>
                                         </div>
-                                        <ul class="grid grid-4-columns">
+                                        <ul class="grid grid-4-columns new-media">
                                             @foreach($media as $mediaa)
                                                 <li>
                                                     <a href="{{$mediaa->link}}" target="_blank">
-                                                        {!! ImageHelper::createTag($mediaa->image,['width' =>[190], 'height' => [60]],['class'=> 'lazy','alt' => $settings->title,'title' => $settings->title],'lazy') !!}
+                                                        {!! ImageHelper::createTag($mediaa->image,['width' =>[180], 'height' => [60]],['alt' => $settings->title,'title' => $settings->title]) !!}
                                                     </a>
                                                 </li>
                                             @endforeach

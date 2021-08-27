@@ -17,3 +17,13 @@ function loading()
     $(".loading").fadeToggle();
 }
 
+setTimeout(function ()
+{
+    (function () {
+        var callback_loaded = function (element) {
+            $('[data-ll-status="loaded"]').removeClass("late-load");
+        };
+        new LazyLoad({ elements_selector: ".late-load",callback_loaded: callback_loaded });
+    })();
+},300);
+

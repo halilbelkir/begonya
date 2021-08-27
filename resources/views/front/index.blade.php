@@ -181,7 +181,7 @@
         </div>
     </section>
     @section('js')
-
+        <script src="{{mix('js/front/index.js')}}"></script>
         <script type="text/javascript">
             var tpj = jQuery;
             var revapi1068;

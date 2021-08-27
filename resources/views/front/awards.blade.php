@@ -18,7 +18,7 @@
                                                 <div class="portfolio-item-wrap pb-0">
                                                     <div class="portfolio-image">
                                                         <a href="{{$award->link}}" target="_blank">
-                                                            {!! ImageHelper::createTag($award->image,['width' =>[355], 'height' => [200]],['class'=> 'lazy','alt' => $award->title,'title' => $award->title],'lazy') !!}
+                                                            {!! ImageHelper::createTag($award->image,['width' =>[355], 'height' => [200]],['class'=> 'late-load','alt' => $award->title,'title' => $award->title],'lazy') !!}
                                                         </a>
                                                     </div>
                                                     <div class="portfolio-description">

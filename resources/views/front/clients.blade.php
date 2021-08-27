@@ -19,7 +19,7 @@
                                             @foreach($clients as $client)
                                                 <li>
                                                     <a href="#">
-                                                        {!! ImageHelper::createTag($client->image,['width' =>[455], 'height' => [455]],['class'=> 'lazy','alt' => $settings->title,'title' => $settings->title],'lazy') !!}
+                                                        {!! ImageHelper::createTag($client->image,['width' =>[455], 'height' => [455]],['class'=> 'late-load','alt' => $settings->title,'title' => $settings->title],'lazy') !!}
                                                     </a>
                                                 </li>
                                             @endforeach
