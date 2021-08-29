@@ -11,14 +11,14 @@ class ImageHelper
     private static $disk        = 'cache';
     private static $browserList = ['Chrome' => 8, 'Mozilla' => 64, 'Safari' => '13.2', 'Opera' => '10.2', 'Edge' => 17, 'Android' => 3];
 
-    public static function getImage($image, $width = false, $height = false, $resize = false):string
+    public static function getImage($image, $width = false, $height = false, $resize = false,$extensionType = false):string
     {
         if (!file_exists($image)) return false;
 
         $imageInfo = pathinfo($image);
 
         //Uygun uzantıyı bul
-        $extension = self::suitableExtension($imageInfo);
+        $extension = self::suitableExtension($imageInfo,$extensionType);
 
         //Yeni isim veriliyor
         $fileName  = self::newFileName($imageInfo['filename'], $width, $height, $extension, $resize);
@@ -124,7 +124,7 @@ class ImageHelper
         return count($param) > 0 ?  implode(" ", $attribute) : '';
     }
 
-    public static function suitableExtension($image):string
+    public static function suitableExtension($image,$extensionType = false):string
     {
         $browser = new Browser();
 
@@ -133,9 +133,12 @@ class ImageHelper
         $browserVersion = current(explode('.', $browser->getVersion()));
         $extension      = $image['extension'];
 
-        if (array_key_exists($browserName, $browserList) && $browserVersion > $browserList[$browserName] && $image['extension'] != 'gif')
+        if ($extensionType == false)
         {
-            $extension = 'webp';
+            if (array_key_exists($browserName, $browserList) && $browserVersion > $browserList[$browserName] && $image['extension'] != 'gif')
+            {
+                $extension = 'webp';
+            }
         }
 
         return $extension;
