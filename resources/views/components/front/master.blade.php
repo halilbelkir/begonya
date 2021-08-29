@@ -12,7 +12,8 @@
     <meta property="og:description" content="{{empty($description) ? $settings->description : $description}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{request()->url()}}">
-    <meta property="og:image" content="{{empty($image) ? ImageHelper::getImage('images/share.jpg', 600, 600,false,true) : ImageHelper::getImage($image, 600, 600,false,true)}}">
+    <meta property="og:image" content="{{asset('images/share.jpg')}}">
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
     <meta property="og:title" content="{{$new_title}}">
