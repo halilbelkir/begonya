@@ -9,7 +9,7 @@
 
     <meta name="keywords" content="{{$settings->tag}}{{!empty($keywords) ? ','.$keywords : ''}}">
     <meta name="description" content="{{empty($description) ? $settings->description : $description}}">
-    <meta property="og:image" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 1200, 620) : ImageHelper::getImage($image, 1200, 620)}}">
+    <meta property="og:image" content="{{empty($image) ? asset('front/images/about_banner.jpg') : asset($image)}}">
     <meta property="og:title" style="text-transform:capitalize;" content="{{$new_title}}">
     <title>{{$new_title}}</title>
 
