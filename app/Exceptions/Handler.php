@@ -43,6 +43,12 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $exception)
     {
+        $statusCode = method_exists($exception, 'getStatusCode') ? $exception->getStatusCode() : 200;
+
+        if($statusCode != 200)
+        {
+            return redirect()->route('notfound');
+        }
 
         return parent::render($request, $exception);
     }
