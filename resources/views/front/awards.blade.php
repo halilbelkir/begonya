@@ -14,7 +14,7 @@
                                 <section id="page-content" class="awards">
                                     <div class="grid-layout grid-3-columns portfolio-item light-bg no-overlay ct-photography ct-media ct-branding ct-Media ct-webdesign shadow" >
                                         @foreach($awards as $award)
-                                            <div class="grid-item animated fadeInDown portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media">
+                                            <div class="grid-item animated fadeInDown portfolio-item light-bg no-overlay img-zoom ct-photography ct-marketing ct-media mb-5">
                                                 <div class="portfolio-item-wrap pb-0">
                                                     <div class="portfolio-image">
                                                         <a href="{{$award->link}}" target="_blank">

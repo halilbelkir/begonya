@@ -23,13 +23,11 @@ class Variables
         $settings  = Settings::find(1);
         $trainings = Pages::find(1);
         $online    = Pages::find(2);
-        $loading_img = asset('front/images/loading.gif');
 
         View::share([
             'settings'  => $settings,
             'trainings' => $trainings,
             'online'    => $online,
-            'loading_img'    => $loading_img,
         ]);
         return $next($request);
     }
