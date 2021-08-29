@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :image="'front/images/gallery.jpg'" :title="'Galeri'">
     @section('preload')
         <link rel="preload" as="image" href="{{ ImageHelper::getImage('front/images/gallery.jpg', 1200, 620) }}">
     @endsection

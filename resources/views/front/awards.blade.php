@@ -1,4 +1,4 @@
-<x-front.master>
+<x-front.master :image="'front/images/awards.jpeg'" :title="'Ödüllerimiz'">
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">

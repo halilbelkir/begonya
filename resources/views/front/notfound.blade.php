@@ -1,4 +1,4 @@
-<x-front.master :title="'Referanslarımız'" :image="'front/images/references.jpeg'">
+<x-front.master :title="'404'">
     <section class="m-t-80 p-b-150">
         <div class="container">
             <div class="row">
