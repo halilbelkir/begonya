@@ -15,7 +15,7 @@
     <meta property="og:image" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 600, 600,false,true) : ImageHelper::getImage($image, 600, 600,false,true)}}">
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
-    <meta property="og:title" style="text-transform:capitalize;" content="{{$new_title}}">
+    <meta property="og:title" content="{{$new_title}}">
     <title>{{$new_title}}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
