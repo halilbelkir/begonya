@@ -177,8 +177,7 @@
                         </li>
                     @endforeach
                 </ul>
-
-                <div class="info">Resmi sağa veya sola kaydırın</div>
+                <div class="info">Resmi aşağı veya yukarı kaydırın</div>
             </div>
         </div>
     </section>
