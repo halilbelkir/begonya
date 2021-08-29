@@ -38,7 +38,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A700%2C400%2C300%2C500&display=swap" onload="this.rel='stylesheet'" property="stylesheet" type="text/css" media="all" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" onload="this.rel='stylesheet'">
-    <link rel="preload" as="image" href="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 1200, 620) : ImageHelper::getImage($image, 1200, 620,false,true)}}">
     <link rel="preload" as="image" href="{{asset(config('app.loading_image'))}}">
     <link rel="preload" as="image" href="{{asset('front/images/logo-light.png')}}">
     <link rel="preload" as="image" href="{{asset('front/images/logo-dark.png')}}">
