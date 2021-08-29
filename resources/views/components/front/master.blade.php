@@ -10,10 +10,10 @@
     <meta name="keywords" content="{{$settings->tag}}{{!empty($keywords) ? ','.$keywords : ''}}">
     <meta name="description" content="{{empty($description) ? $settings->description : $description}}">
     <meta property="og:url" content="{{request()->url()}}">
-    <meta property="og:image" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 1200, 620,false,true) : ImageHelper::getImage($image, 1200, 620,false,true)}}">
-    <meta property="og:image:url" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 1200, 620,false,true) : ImageHelper::getImage($image, 1200, 620,false,true)}}">
+    <meta property="og:image" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 1200, 1200,false,true) : ImageHelper::getImage($image, 1200, 1200,false,true)}}">
+    <meta property="og:image:url" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 1200, 1200,false,true) : ImageHelper::getImage($image, 1200, 1200,false,true)}}">
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="620" />
+    <meta property="og:image:height" content="1200" />
     <meta property="og:title" style="text-transform:capitalize;" content="{{$new_title}}">
     <title>{{$new_title}}</title>
 
