@@ -9,6 +9,7 @@
 
     <meta name="keywords" content="{{$settings->tag}}{{!empty($keywords) ? ','.$keywords : ''}}">
     <meta name="description" content="{{empty($description) ? $settings->description : $description}}">
+    <meta property="og:description" content="{{empty($description) ? $settings->description : $description}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{request()->url()}}">
     <meta property="og:image" content="{{empty($image) ? ImageHelper::getImage('front/images/about_banner.jpg', 600, 600,false,true) : ImageHelper::getImage($image, 600, 600,false,true)}}">
