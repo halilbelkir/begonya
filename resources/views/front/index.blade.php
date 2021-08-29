@@ -177,9 +177,30 @@
                         </li>
                     @endforeach
                 </ul>
+
+                <div class="info">Resmi sağa veya sola kaydırın</div>
             </div>
         </div>
     </section>
+    <style>
+        @media (max-width: 1024px)
+        {
+            #slider .info
+            {
+                display: block !important;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                z-index: 99999;
+                font-size: 15px;
+                width: 130px;
+            }
+        }
+        #slider .info
+        {
+            display: none;
+        }
+    </style>
     @section('js')
         <script src="{{mix('js/front/index.js')}}"></script>
         <script type="text/javascript">
