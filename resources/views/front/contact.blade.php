@@ -56,7 +56,7 @@
                             </div>
                         </section>
                         <section class="no-padding">
-                            <div class="map" data-latitude="40.9287862" data-longitude="29.3075917" data-style="light" data-info="Hello from &lt;br&gt; Inspiro Themes"></div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d376.8047688600738!2d29.308741044709667!3d40.928063542745164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3509261bf948ecf1!2sBegonya%20Psikolojik%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20Merkezi!5e0!3m2!1str!2str!4v1630434184803!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </section>
                     </div>
                 </div>
@@ -64,9 +64,6 @@
         </div>
     </section>
     @section('js')
-        <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCxKM3K1kNRjTV2k3_--LMQU-Ulxzu8J50'></script>
-        <script type="text/javascript" src="{{asset('front/js/gmap3.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('front/js/map-styles.js')}}"></script>
         @if (session('message'))
             <script>
                 $.notify({
