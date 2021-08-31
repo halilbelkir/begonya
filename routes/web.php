@@ -119,8 +119,8 @@
             Route::post('awards/sortable', [App\Http\Controllers\awardsController::class, 'sortable'])->name('awards.sortable');
             Route::get('awards/datatables', [App\Http\Controllers\awardsController::class, 'datatable'])->name('awards.datatables');
             Route::get('awards/destroy/{id}', [App\Http\Controllers\awardsController::class, 'destroy'])->name('award.destroy');
+            Route::get('awards/destroy-image/{id}', [App\Http\Controllers\awardsController::class, 'destroyImage'])->name('awards.destroy.image');
 
-            Route::get('awards/destroy-image/{id}', [App\Http\Controllers\awardsController::class, 'destroyImage'])->name('pages.destroy.image');
             Route::get('pages/datatables', [App\Http\Controllers\pagesController::class, 'datatable'])->name('pages.datatables');
             Route::get('pages/destroy/{id}', [App\Http\Controllers\pagesController::class, 'destroy'])->name('page.destroy');
             Route::get('pages/destroy-image/{id}', [App\Http\Controllers\pagesController::class, 'destroyImage'])->name('pages.destroy.image');
