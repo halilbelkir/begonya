@@ -50,13 +50,12 @@
     <link rel="stylesheet" href="{{mix('css/front/front.css')}}" />
     <link rel="alternate" href="{{ route('index') }}" hreflang="x-default" />
     <link rel="alternate" href="{{ route('index') }}" hreflang="tr" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQFRDQ9FN5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-BQFRDQ9FN5');
     </script>
 </head>
