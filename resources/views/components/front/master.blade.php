@@ -58,6 +58,14 @@
         gtag('js', new Date());
         gtag('config', 'G-BQFRDQ9FN5');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-303646193"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-303646193');
+    </script>
 </head>
 <body>
 <header @if(!empty(Request::segment(1))) class="dark" @endif>
