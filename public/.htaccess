@@ -1,6 +1,3 @@
-Redirect 301 /public/galeri /galeri
-Redirect 301 /public/hizmetlerimiz/cocuk-ergen-danismanligi /hizmetlerimiz/cocuk-ergen-danismanligi
-Redirect 301 /public/insan-kaynaklari-danismanlik-ve-icerikleri /hizmetlerimiz
 
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
