@@ -5,14 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Form extends Model
+class Education extends Model
 {
-    protected $table = "form";
+    protected $table = "education";
     protected $primaryKey = "id";
     protected $guarded = [];
-
-    public function education()
-    {
-        return $this->belongsTo(Education::class,'education_id');
-    }
 }

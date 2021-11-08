@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\sendmail;
 use App\Models\Awards;
 use App\Models\Blog;
+use App\Models\Education;
 use App\Models\Gallery;
 use App\Models\Media;
 use App\Models\Pages;
@@ -208,6 +209,18 @@ class frontController extends Controller
         return view('front.blog.detail',compact('blog'));
     }
 
+    public function education()
+    {
+        $education = Education::orderBy('order','asc')->get();
+        return view('front.education.list',compact('education'));
+    }
+
+    public function education_detail($seflink)
+    {
+        $education = Education::where('seflink',$seflink)->first();
+        return view('front.education.detail',compact('education'));
+    }
+
     public function team_detail($seflink)
     {
         $team = Team::where('seflink',$seflink)->first();
@@ -228,21 +241,37 @@ class frontController extends Controller
             if (!empty(Cookie::get('form')))
             {
                 Session::flash('message', array('Başarısız!','Lütfen 2 dakika sonra tekrar deneyiniz.', 'danger'));
-                return redirect()->route('contact');
+
+                return redirect()->back();
             }
 
+            if ($request->has('education_id'))
+            {
+                $attribute = array(
+                    'name'    => 'Ad & Soyad',
+                    'phone'   => 'Telefon',
+                );
 
-            $attribute = array(
-                'name'    => 'Ad & Soyad',
-                'email'   => 'E-Mail',
-                'message' => 'Mesajınız',
-            );
+                $rules = array(
+                    'name'    => 'required',
+                    'phone'   => 'required',
+                );
+            }
+            else
+            {
+                $attribute = array(
+                    'name'    => 'Ad & Soyad',
+                    'email'   => 'E-Mail',
+                    'message'   => 'Mesajınız',
+                );
 
-            $rules = array(
-                'name'    => 'required',
-                'email'   => 'required|email',
-                'message' => 'required',
-            );
+                $rules = array(
+                    'name'    => 'required',
+                    'email'   => 'required|email',
+                    'message'   => 'required',
+                );
+            }
+
 
 
             $validator = Validator::make($request->all(), $rules);
@@ -256,8 +285,10 @@ class frontController extends Controller
 
             $form          = new Form;
             $form->name    = $request->get('name');
-            $form->email   = $request->get('email');
             $form->message = $request->get('message');
+            $form->email = $request->has('email') ? $request->get('email') : null;
+            $form->phone = $request->has('phone') ? $request->get('phone') : null;
+            $form->education_id = $request->has('education_id') ? $request->get('education_id') : null;
 
             $form->save();
 
@@ -270,6 +301,15 @@ class frontController extends Controller
                 'message' => $request->get('message'),
                 'subject' => 'İletişim Formu'
             );
+
+            if ($request->has('education_id'))
+            {
+                $education        = Education::where('id',$request->get('education_id'))->first();
+                $datas['subject'] = 'Eğitime Kayıt Olan Var :)';
+                $datas['phone']   = $request->get('phone');
+                $datas['education'] = $education->title;
+            }
+
             Mail::to($settings->recipient_email)->send(new sendmail($datas));
 
             Cookie::queue('form', true, 2);
@@ -279,7 +319,14 @@ class frontController extends Controller
             Session::flash('message', array('Başarısız!','Hata! Lütfen tekrar deneyiniz.', 'danger'));
         }
 
-        return redirect()->route('contact');
+        if ($request->has('education_id'))
+        {
+            return redirect()->route('education.detail',$education->seflink);
+        }
+        else
+        {
+            return redirect()->route('contact');
+        }
     }
 
     public function sitemap()

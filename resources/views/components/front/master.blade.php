@@ -88,7 +88,7 @@
             <li><a href="{{route('services.list')}}">Hizmetlerimiz</a></li>
             <li><a href="{{route('clients')}}">Referanslarımız</a></li>
             <li><a href="{{route('awards')}}">Ödüllerimiz</a></li>
-            <li><a href="{{url($trainings->seflink)}}">{{$trainings->title}}</a></li>
+            <li><a href="{{route('education.list')}}">Eğitimlerimiz (Begonya Akademi)</a></li>
             <li><a href="{{route('gallery')}}">Galeri</a></li>
             <li><a href="{{route('blog.list')}}">Blog</a></li>
             <li><a href="{{route('media')}}">Basında Biz</a></li>
@@ -116,7 +116,7 @@
 <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
 
 <div class="loading">
-    <img src="{{config('app.loading_image')}}">
+    <img src="{{asset(config('app.loading_image'))}}">
 </div>
 
 <script src="{{mix('js/front/front.js')}}"></script>

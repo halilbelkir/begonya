@@ -114,7 +114,7 @@
                         <x-slot name="content">
                             <!-- Account Management -->
 
-                            <x-jet-dropdown-link href="{{ route('pages.edit',1) }}">
+                            <x-jet-dropdown-link href="{{ route('education.index') }}">
                                 {{ __('Eğitimler') }}
                             </x-jet-dropdown-link>
 
@@ -228,7 +228,7 @@
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
                 @endif
-                <x-jet-responsive-nav-link href="{{ route('pages.edit',1) }}">
+                <x-jet-responsive-nav-link href="{{ route('education.index') }}">
                     {{ __('Eğitimler') }}
                 </x-jet-responsive-nav-link>
 

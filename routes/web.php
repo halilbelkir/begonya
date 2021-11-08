@@ -28,6 +28,8 @@
     Route::get('/galeri', [App\Http\Controllers\frontController::class, 'gallery'])->name('gallery');
     Route::get('/blog', [App\Http\Controllers\frontController::class, 'blog'])->name('blog.list');
     Route::get('/blog/{seflink}', [App\Http\Controllers\frontController::class, 'blog_detail'])->name('blog.detail');
+    Route::get('/egitimler', [App\Http\Controllers\frontController::class, 'education'])->name('education.list');
+    Route::get('/egitimler/{seflink}', [App\Http\Controllers\frontController::class, 'education_detail'])->name('education.detail');
     Route::get('/ekibimiz/{seflink}', [App\Http\Controllers\frontController::class, 'team_detail'])->name('team.detail');
     Route::get('/basinda-biz', [App\Http\Controllers\frontController::class, 'media'])->name('media');
     Route::get('/site-haritasi', [App\Http\Controllers\frontController::class, 'sitemap'])->name('sitemap');
@@ -130,6 +132,11 @@
             Route::get('blog/destroy-image/{id}/{order}', [App\Http\Controllers\blogController::class, 'destroyImage'])->name('blog.destroy.image');
             Route::post('blog/sortable', [App\Http\Controllers\blogController::class, 'sortable'])->name('blog.sortable');
 
+            Route::get('education/datatables', [App\Http\Controllers\EducationController::class, 'datatable'])->name('education.datatables');
+            Route::get('education/destroy/{id}', [App\Http\Controllers\EducationController::class, 'destroy'])->name('educationn.destroy');
+            Route::get('education/destroy-image/{id}', [App\Http\Controllers\EducationController::class, 'destroyImage'])->name('education.destroy.image');
+            Route::post('education/sortable', [App\Http\Controllers\EducationController::class, 'sortable'])->name('education.sortable');
+
             Route::post('media/sortable', [App\Http\Controllers\mediaController::class, 'sortable'])->name('media.sortable');
             Route::get('media/datatables', [App\Http\Controllers\mediaController::class, 'datatable'])->name('media.datatables');
             Route::get('media/destroy/{id}', [App\Http\Controllers\mediaController::class, 'destroy'])->name('mediaa.destroy');
@@ -160,6 +167,7 @@
             Route::resource('media', App\Http\Controllers\mediaController::class);
             Route::resource('gallery', App\Http\Controllers\galleryController::class);
             Route::resource('slider', App\Http\Controllers\sliderController::class);
+            Route::resource('education', App\Http\Controllers\EducationController::class);
         });
     });
     Route::get('{seflink}', [App\Http\Controllers\frontController::class, 'pages'])->name('front.pages');

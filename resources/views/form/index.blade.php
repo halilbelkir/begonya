@@ -7,11 +7,13 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-6 py-6">
-                <table class=" table table-striped table-bordered dt-responsive nowrap" data-order='[[ 3, "asc" ]]'  id="data-tables">
+                <table class=" table table-striped table-bordered dt-responsive nowrap" data-order='[[ 5, "desc" ]]'  id="data-tables">
                     <thead>
                     <tr>
                         <th>Ad & Soyad</th>
                         <th>E-mail</th>
+                        <th>Telefon</th>
+                        <th>Eğitim</th>
                         <th>Mesaj</th>
                         <th>Oluşturulma Zamanı</th>
                     </tr>
@@ -25,6 +27,8 @@
         [
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
+            { data: 'phone', name: 'phone' },
+            { data: 'education', name: 'education' },
             { data: 'message', name: 'message' },
             { data: 'created_at', name: 'created_at' },
         ]

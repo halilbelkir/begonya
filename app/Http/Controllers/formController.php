@@ -21,6 +21,9 @@ class formController extends Controller
             ->editColumn('created_at', function ($form) {
                 return $form->updated_at ? with(new Carbon($form->updated_at))->format('d-m-Y H:i:s') : '';
             })
+            ->editColumn('education', function ($form) {
+                return !empty($form->education->title) ? $form->education->title : '';
+            })
             ->toJson();
     }
 }
