@@ -35,6 +35,7 @@
     Route::get('/site-haritasi', [App\Http\Controllers\frontController::class, 'sitemap'])->name('sitemap');
     Route::get('/iletisim', function () {return view('front.contact');})->name('contact');
     Route::get('/404', function () {return view('front.notfound');})->name('notfound');
+    Route::get('/guncelleniyor', function () {return view('front.site_update');})->name('site.update');
     Route::post('/gonder', [App\Http\Controllers\frontController::class, 'send'])->name('send');
     Route::prefix('yonetimpaneli')->group(function ()
     {

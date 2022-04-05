@@ -20,6 +20,11 @@ class Variables
      */
     public function handle(Request $request, Closure $next)
     {
+        if (env('APP_UPDATE') && \Request::segment(1) != 'guncelleniyor')
+        {
+            return redirect()->route('site.update');
+        }
+
         $settings  = Settings::find(1);
         $trainings = Pages::find(1);
         $online    = Pages::find(2);
