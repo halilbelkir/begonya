@@ -88,7 +88,8 @@
             <li><a href="{{route('services.list')}}">Hizmetlerimiz</a></li>
             <li><a href="{{route('clients')}}">Referanslarımız</a></li>
             <li><a href="{{route('awards')}}">Ödüllerimiz</a></li>
-            <li><a href="{{route('education.list')}}">Eğitimlerimiz (Begonya Akademi)</a></li>
+            <!-- <li><a href="{{route('education.list')}}">Eğitimlerimiz (Begonya Akademi)</a></li> -->
+            <li><a href="{{url($trainings->seflink)}}">{{$trainings->title}}</a></li>
             <li><a href="{{route('gallery')}}">Galeri</a></li>
             <li><a href="{{route('blog.list')}}">Blog</a></li>
             <li><a href="{{route('media')}}">Basında Biz</a></li>
